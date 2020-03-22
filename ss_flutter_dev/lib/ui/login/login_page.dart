@@ -7,6 +7,20 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  //Initially password is obscure show password
+  bool _obScureText = true;
+
+  String password;
+
+  //handle the password show status
+  void _handlePassword(){
+    setState(() {
+      _obScureText = !_obScureText;
+      //! ບໍເທົ່າກັບ
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,15 +46,15 @@ class _LoginPageState extends State<LoginPage> {
               height: 20,
             ),
             TextField(
-              obscureText: true,
+              obscureText: _obScureText,
               decoration: InputDecoration(
                 hintText: "Password",
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.euro_symbol),
-                  onPressed: () {
-                    
-                  },
+                  icon: Icon(
+                    _obScureText ? Icons.visibility : Icons.visibility_off,),
+                  onPressed: _handlePassword,
                 ),
+                
               ),
             ),
             SizedBox(

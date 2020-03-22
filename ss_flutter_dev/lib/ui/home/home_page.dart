@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ss_flutter_dev/ui/home/drawer_page.dart';
 import 'package:ss_flutter_dev/ui/ui_const.dart';
-import 'package:ss_flutter_dev/ui/ui_constructor.dart';
 
 class HomePage extends StatefulWidget {
   @override
