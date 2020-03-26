@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ss_flutter_dev/ui/management/management_menu_page.dart';
+import 'package:ss_flutter_dev/ui/search/search_page2.dart';
 import 'package:ss_flutter_dev/ui/ui_const.dart';
 
 class DrawerPage extends StatelessWidget {
@@ -79,6 +80,20 @@ class DrawerPage extends StatelessWidget {
                 ],
               ),
               onTap: () {},
+            ),
+            ListTile(
+              title: Row(
+                children: <Widget>[
+                  Icon(Icons.search),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('ຄົ້ນຫາ', style: drawerMenuStyle),
+                ],
+              ),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchPageMenu()));
+              },
             ),
             ListTile(
               title: Row(
