@@ -9,6 +9,10 @@ class SearchPageMenu extends StatefulWidget {
 class _SearchPageMenuState extends State<SearchPageMenu> {
   final TextEditingController _editingController = TextEditingController();
 
+  List<String> _list;
+
+  final key = GlobalKey<ScaffoldState> ();
+
   Icon actionIcon = Icon(
     Icons.search,
   );
@@ -25,6 +29,7 @@ class _SearchPageMenuState extends State<SearchPageMenu> {
   void initState() {
     super.initState();
     isSearching = false;
+    initData();
   }
 
   _SearchPageMenuState() {
@@ -70,7 +75,7 @@ class _SearchPageMenuState extends State<SearchPageMenu> {
                 setState(() {
                   isSearching = true;
                 });
-              }else{
+              } else {
                 setState(() {
                   this.actionIcon = Icon(Icons.search);
                   this.appBarTitle = Text("");
@@ -85,10 +90,67 @@ class _SearchPageMenuState extends State<SearchPageMenu> {
     );
   }
 
+  void initData() {
+    _list = List();
+    _list.add("Google");
+    _list.add("Macbook");
+    _list.add("Windows");
+    _list.add("Iphone");
+    _list.add("Samsung");
+    _list.add("Oppo");
+    _list.add("Vivo");
+    _list.add("Phyton");
+    _list.add("Dart");
+    _list.add("Flutter");
+    _list.add("Java");
+    _list.add("PHP");
+    _list.add("Emulator");
+    _list.add("IOS");
+    _list.add("Linux");
+    _list.add("Line");
+    _list.add("Facebook");
+    _list.add("Youtube");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: key,
       appBar: appBarBuild(context),
+      body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 8),
+        children: isSearching ? _buildSearchList() : _buildList(),
+      ),
+    );
+  }
+  List<ChildItem> _buildList(){
+    return _list.map((contact) => ChildItem(contact)).toList();
+  }
+
+  List<ChildItem>  _buildSearchList(){
+    if(searchText.isEmpty){
+      return _list.map((contact)=> ChildItem(contact)).toList();
+    }else{
+      List<String> _searchList = List();
+      for(int i=0; i<_list.length; i++){
+        String name = _list.elementAt(i);
+        if(name.toLowerCase().contains(searchText.toLowerCase())){
+          _searchList.add(name);
+        }
+      }
+      return _searchList.map((contact)=> ChildItem(contact)).toList();
+    }
+    
+  }
+}
+
+class ChildItem extends StatelessWidget {
+  final String name;
+  ChildItem(this.name);
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(this.name),
     );
   }
 }
