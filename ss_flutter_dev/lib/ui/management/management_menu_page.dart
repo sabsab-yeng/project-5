@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ss_flutter_dev/ui/day10/hero_animation_page.dart';
+import 'package:ss_flutter_dev/ui/day10/hero_radial_page.dart';
 import 'package:ss_flutter_dev/ui/day9/alertdialog_page.dart';
 import 'package:ss_flutter_dev/ui/day9/hero_page.dart';
 import 'package:ss_flutter_dev/ui/day9/snack_bar.dart';
@@ -96,12 +97,14 @@ class _ManagementMenuPageState extends State<ManagementMenuPage> {
               Container(
                 height: 60,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> HeroRadiaPage()));
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "ຂໍ້ມູນຄະແນນ",
+                        "Hero Radial",
                         style: menuStyle,
                       ),
                       Icon(Icons.navigate_next),
