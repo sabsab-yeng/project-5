@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ss_flutter_dev/ui/management/management_menu_page.dart';
 import 'package:ss_flutter_dev/ui/search/search_page2.dart';
-import 'package:ss_flutter_dev/ui/ui_const.dart';
+import 'package:ss_flutter_dev/ui/widgets/drawer_menu_widget.dart';
 
 class DrawerPage extends StatelessWidget {
   @override
@@ -28,16 +28,9 @@ class DrawerPage extends StatelessWidget {
               ),
               decoration: BoxDecoration(color: Colors.blue),
             ),
-            ListTile(
-              title: Row(
-                children: <Widget>[
-                  Icon(Icons.data_usage),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('ຈັດການຂໍ້ມູນ', style: drawerMenuStyle),
-                ],
-              ),
+            DrawerMenuWidget(
+              title: "ຈັດການຂໍ້ມູນ",
+              icon: Icons.data_usage,
               onTap: () {
                 Navigator.push(
                     context,
@@ -45,66 +38,32 @@ class DrawerPage extends StatelessWidget {
                         builder: (context) => ManagementMenuPage()));
               },
             ),
-            ListTile(
-              title: Row(
-                children: <Widget>[
-                  Icon(Icons.event_available),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('ປະເມີນ', style: drawerMenuStyle),
-                ],
-              ),
+            DrawerMenuWidget(
+              title: "ປະເມີນ",
+              icon: Icons.event_available,
               onTap: () {},
             ),
-            ListTile(
-              title: Row(
-                children: <Widget>[
-                  Icon(Icons.remove_shopping_cart),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('ລົງທະບຽນ', style: drawerMenuStyle),
-                ],
-              ),
+            DrawerMenuWidget(
+              title: "ລົງທະບຽນ",
+              icon: Icons.remove_shopping_cart,
               onTap: () {},
             ),
-            ListTile(
-              title: Row(
-                children: <Widget>[
-                  Icon(Icons.report),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('ລາຍງານ', style: drawerMenuStyle),
-                ],
-              ),
+            DrawerMenuWidget(
+              title: "ລາຍງານ",
+              icon: Icons.report,
               onTap: () {},
             ),
-            ListTile(
-              title: Row(
-                children: <Widget>[
-                  Icon(Icons.search),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('ຄົ້ນຫາ', style: drawerMenuStyle),
-                ],
-              ),
+            DrawerMenuWidget(
+              title: "ຄົ້ນຫາ",
+              icon: Icons.search,
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchPageMenu()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchPageMenu()));
               },
             ),
-            ListTile(
-              title: Row(
-                children: <Widget>[
-                  Icon(Icons.question_answer),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('ກ່ຽວກັບລະບົບ', style: drawerMenuStyle),
-                ],
-              ),
+            DrawerMenuWidget(
+              title: "ກ່ຽວກັບລະບົບ",
+              icon: Icons.question_answer,
               onTap: () {},
             ),
           ],

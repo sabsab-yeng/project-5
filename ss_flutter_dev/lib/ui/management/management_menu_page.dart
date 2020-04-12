@@ -4,6 +4,7 @@ import 'package:ss_flutter_dev/ui/day10/hero_radial_page.dart';
 import 'package:ss_flutter_dev/ui/day9/alertdialog_page.dart';
 import 'package:ss_flutter_dev/ui/day9/snack_bar.dart';
 import 'package:ss_flutter_dev/ui/ui_const.dart';
+import 'package:ss_flutter_dev/ui/widgets/mange_widget.dart';
 
 class ManagementMenuPage extends StatefulWidget {
   @override
@@ -31,206 +32,79 @@ class _ManagementMenuPageState extends State<ManagementMenuPage> {
         ),
       ),
       body: SingleChildScrollView(
-              child: Container(
+        child: Container(
           padding: EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> SnackBarPage()));
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ສະແດງຂໍ້ຄວາມ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SnackBarPage()));
+                },
+                title: "ສະແດງຂໍ້ຄວາມ",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> AlertDialogPage()));
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ສະແດງຂໍ້ຄວາມຂື້ນມາໜ້າຈໍ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AlertDialogPage()));
+                },
+                title: "ສະແດງຂໍ້ຄວາມຂື້ນມາໜ້າຈໍ",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> HeroAnimationPage()));
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "Hero animation",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HeroAnimationPage()));
+                },
+                title: "Hero animation",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> HeroRadiaPage()));
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "Hero Radial",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HeroRadiaPage()));
+                },
+                title: "Hero Radial",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ຂໍ້ມູນສົກຮຽນ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {},
+                title: "ຂໍ້ມູນສົກຮຽນ",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ຂໍ້ມູນບ້ານ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {},
+                title: "ຂໍ້ມູນບ້ານ",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ຂໍ້ມູນເມືອງ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {},
+                title: "ຂໍ້ມູນເມືອງ",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ຂໍ້ມູນແຂວງ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {},
+                title: "ຂໍ້ມູນແຂວງ",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ຂໍ້ມູນພາກວິຊາ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {},
+                title: "ຂໍ້ມູນພາກວິຊາ",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ຂໍ້ມູນວຸດທີການສຶກສາ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {},
+                title: "ຂໍ້ມູນວຸດທີການສຶກສາ",
               ),
               Divider(),
-              Container(
-                height: 60,
-                child: InkWell(
-                  onTap: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "ຂໍ້ມູນຕໍາແໜ່ງ",
-                        style: menuStyle,
-                      ),
-                      Icon(Icons.navigate_next),
-                    ],
-                  ),
-                ),
+              ManageWidget(
+                onTap: () {},
+                title: "ຂໍ້ມູນຕໍາແໜ່ງ",
               ),
-              Divider(),
             ],
           ),
         ),
